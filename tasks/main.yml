@@ -1,0 +1,14 @@
+---
+# Tasks for current role
+- name: Installing docker compose
+  pip:
+    name: docker-compose
+    version: "{{ docker_compose_version | default(omit) }}"
+    state: present
+  become: yes
+  tags:
+    - docker
+    - compose
+    - install
+
+# vim:ft=ansible:
